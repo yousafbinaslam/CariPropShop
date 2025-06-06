@@ -17,7 +17,8 @@ import {
   Download,
   Play,
   Pause,
-  Settings
+  Settings,
+  Clock
 } from 'lucide-react';
 
 interface QualityCheck {

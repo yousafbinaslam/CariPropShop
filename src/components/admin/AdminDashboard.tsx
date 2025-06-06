@@ -34,6 +34,7 @@ import HelpDocumentation from './HelpDocumentation';
 import DatabaseManagement from './DatabaseManagement';
 import AIAssistant from './AIAssistant';
 import SystemMonitor from './SystemMonitor';
+import SupabaseStatus from '../SupabaseStatus';
 
 const AdminDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -424,6 +425,7 @@ const AdminDashboard: React.FC = () => {
               <Bot className="w-4 h-4" />
               <span>AI Assistant Jenny</span>
             </button>
+            <SupabaseStatus />
             <button className="p-2 text-neutral-600 hover:text-neutral-900 transition-colors duration-200">
               <Eye className="w-5 h-5" />
             </button>
