@@ -9,6 +9,7 @@ import ArtRoom from './components/ArtRoom';
 import Footer from './components/Footer';
 import AdminDashboard from './components/admin/AdminDashboard';
 import Sitemap from './components/Sitemap';
+import UpgradeDemo from './components/demo/UpgradeDemo';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/upgrade-demo" element={<UpgradeDemo />} />
           <Route path="/" element={
             <div className="min-h-screen bg-white">
               <Header />
