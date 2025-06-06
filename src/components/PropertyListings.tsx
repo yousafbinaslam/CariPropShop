@@ -5,7 +5,7 @@ import { MapPin, Bed, Bath, Square, Eye, MessageSquare, Heart, Filter } from 'lu
 interface Property {
   id: number;
   title: string;
-  type: 'residential' | 'commercial' | 'industrial' | 'land';
+  type: 'residential' | 'rumah' | 'apartment' | 'commercial' | 'industrial' | 'land';
   price: number;
   location: string;
   bedrooms?: number;
@@ -25,7 +25,7 @@ const PropertyListings: React.FC = () => {
     {
       id: 1,
       title: 'Modern Villa Kemang',
-      type: 'residential',
+      type: 'rumah',
       price: 8500000000,
       location: 'Kemang, Jakarta Selatan',
       bedrooms: 4,
@@ -38,7 +38,7 @@ const PropertyListings: React.FC = () => {
     {
       id: 2,
       title: 'Luxury Apartment Senayan',
-      type: 'residential',
+      type: 'apartment',
       price: 12000000000,
       location: 'Senayan, Jakarta Pusat',
       bedrooms: 3,
@@ -84,7 +84,7 @@ const PropertyListings: React.FC = () => {
     {
       id: 6,
       title: 'Contemporary House Bandung',
-      type: 'residential',
+      type: 'rumah',
       price: 4500000000,
       location: 'Dago, Bandung',
       bedrooms: 5,
@@ -99,6 +99,8 @@ const PropertyListings: React.FC = () => {
   const filters = [
     { key: 'all', label: t('properties.filter.all') },
     { key: 'residential', label: t('properties.filter.residential') },
+    { key: 'rumah', label: 'Rumah' },
+    { key: 'apartment', label: 'Apartment' },
     { key: 'commercial', label: t('properties.filter.commercial') },
     { key: 'industrial', label: t('properties.filter.industrial') },
     { key: 'land', label: t('properties.filter.land') },
