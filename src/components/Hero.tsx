@@ -56,10 +56,13 @@ const Hero: React.FC = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
             
-            <button className="group flex items-center space-x-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <a 
+              href="/admin"
+              className="group flex items-center space-x-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+            >
               <Play className="w-5 h-5" />
               <span className="font-semibold">{t('hero.cta.design')}</span>
-            </button>
+            </a>
           </div>
 
           {/* Stats */}

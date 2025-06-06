@@ -34,11 +34,18 @@ import HelpDocumentation from './HelpDocumentation';
 import DatabaseManagement from './DatabaseManagement';
 import AIAssistant from './AIAssistant';
 import SystemMonitor from './SystemMonitor';
+import UserManagement from './UserManagement';
+import DataVisualization from './DataVisualization';
+import AuditTrail from './AuditTrail';
 import SupabaseStatus from '../SupabaseStatus';
+import { useNotifications, NotificationBell } from './NotificationSystem';
+import { useAuth } from './AuthGuard';
 
 const AdminDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [showAIAssistant, setShowAIAssistant] = useState(false);
+  const { addNotification } = useNotifications();
+  const { signOut, user } = useAuth();
 
   const menuItems = [
     { 
@@ -99,6 +106,24 @@ const AdminDashboard: React.FC = () => {
       id: 'database', 
       label: 'Manajemen Database', 
       icon: <Database className="w-5 h-5" />,
+      category: 'system'
+    },
+    { 
+      id: 'users', 
+      label: 'Manajemen Pengguna', 
+      icon: <Users className="w-5 h-5" />,
+      category: 'system'
+    },
+    { 
+      id: 'data-viz', 
+      label: 'Visualisasi Data', 
+      icon: <BarChart3 className="w-5 h-5" />,
+      category: 'analytics'
+    },
+    { 
+      id: 'audit', 
+      label: 'Audit Trail', 
+      icon: <Shield className="w-5 h-5" />,
       category: 'system'
     },
     { 
@@ -224,6 +249,16 @@ const AdminDashboard: React.FC = () => {
         return <HelpDocumentation />;
       case 'monitor':
         return <SystemMonitor />;
+      case 'users':
+        return <UserManagement />;
+      case 'data-viz':
+        return <DataVisualization />;
+      case 'audit':
+        return <AuditTrail />;
+      case 'communication':
+        return <div className="text-center py-12"><MessageSquare className="w-12 h-12 text-neutral-400 mx-auto mb-4" /><h3 className="text-lg font-medium text-neutral-900">Pusat Komunikasi</h3></div>;
+      case 'settings':
+        return <div className="text-center py-12"><Settings className="w-12 h-12 text-neutral-400 mx-auto mb-4" /><h3 className="text-lg font-medium text-neutral-900">Pengaturan Sistem</h3></div>;
       default:
         return (
           <div className="space-y-8">
@@ -429,8 +464,19 @@ const AdminDashboard: React.FC = () => {
             <button className="p-2 text-neutral-600 hover:text-neutral-900 transition-colors duration-200">
               <Eye className="w-5 h-5" />
             </button>
-            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-medium">A</span>
+            <NotificationBell />
+            <div className="flex items-center space-x-3">
+              <div className="text-right">
+                <div className="text-sm font-medium text-neutral-900">{user?.email}</div>
+                <div className="text-xs text-neutral-500">Administrator</div>
+              </div>
+              <button
+                onClick={signOut}
+                className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200"
+                title="Logout"
+              >
+                <span className="text-white text-sm font-medium">L</span>
+              </button>
             </div>
           </div>
         </div>
