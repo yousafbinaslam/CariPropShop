@@ -15,13 +15,13 @@ const Footer: React.FC = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: 'info@caripropshop.id',
-      link: 'mailto:info@caripropshop.id',
+      value: 'info@caripropshop.com',
+      link: 'mailto:info@caripropshop.com',
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Address',
-      value: 'Jakarta, Indonesia',
+      value: 'Surabaya, Indonesia',
       link: null,
     },
   ];
