@@ -405,7 +405,7 @@ const QualityAssurance: React.FC = () => {
             <Monitor className="w-5 h-5 text-blue-600" />
           </div>
           <div className="text-3xl font-bold text-green-600 mb-2">{performanceMetrics.firstContentfulPaint}s</div>
-          <div className="text-sm text-neutral-600">Good (< 1.8s)</div>
+          <div className="text-sm text-neutral-600">{"Good (< 1.8s)"}</div>
           <div className="w-full bg-neutral-200 rounded-full h-2 mt-3">
             <div className="bg-green-500 h-2 rounded-full" style={{ width: '75%' }}></div>
           </div>
@@ -417,7 +417,7 @@ const QualityAssurance: React.FC = () => {
             <Eye className="w-5 h-5 text-green-600" />
           </div>
           <div className="text-3xl font-bold text-green-600 mb-2">{performanceMetrics.largestContentfulPaint}s</div>
-          <div className="text-sm text-neutral-600">Good (< 2.5s)</div>
+          <div className="text-sm text-neutral-600">{"Good (< 2.5s)"}</div>
           <div className="w-full bg-neutral-200 rounded-full h-2 mt-3">
             <div className="bg-green-500 h-2 rounded-full" style={{ width: '84%' }}></div>
           </div>
@@ -429,7 +429,7 @@ const QualityAssurance: React.FC = () => {
             <Zap className="w-5 h-5 text-green-600" />
           </div>
           <div className="text-3xl font-bold text-green-600 mb-2">{performanceMetrics.cumulativeLayoutShift}</div>
-          <div className="text-sm text-neutral-600">Good (< 0.1)</div>
+          <div className="text-sm text-neutral-600">{"Good (< 0.1)"}</div>
           <div className="w-full bg-neutral-200 rounded-full h-2 mt-3">
             <div className="bg-green-500 h-2 rounded-full" style={{ width: '95%' }}></div>
           </div>
