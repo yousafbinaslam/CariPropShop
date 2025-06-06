@@ -22,6 +22,7 @@ const translations = {
     'nav.contact': 'Kontak',
     
     // Hero Section
+    'hero.title': 'CARI PROP SHOP',
     'hero.subtitle': 'Platform Manajemen Properti Terpadu Indonesia',
     'hero.description': 'Kelola properti, klien, dan transaksi dengan sistem ERP/CRM terlengkap untuk profesional real estate di Indonesia.',
     'hero.cta.explore': 'Jelajahi Properti',
@@ -78,7 +79,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'EstateElegance Indonesia',
+    'hero.title': 'CARI PROP SHOP',
     'hero.subtitle': 'Exclusive Platform for Luxury Real Estate & Interior Design',
     'hero.description': 'Discover your dream property and create elegant living spaces with Indonesia\'s leading interior design services.',
     'hero.cta.explore': 'Explore Properties',
