@@ -173,60 +173,155 @@ const NotificationItem: React.FC<NotificationItemProps> = ({ notification, onRem
   );
 };
 
-// Real-time notification system
+// Real-time notification system with proper WebSocket handling
 export const useRealTimeNotifications = () => {
   const { addNotification } = useNotifications();
+  const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    // WebSocket connection for real-time notifications
-    const ws = new WebSocket('ws://localhost:3002');
+    let ws: WebSocket | null = null;
+    let reconnectTimeout: NodeJS.Timeout;
 
-    ws.onmessage = (event) => {
+    const connectWebSocket = () => {
       try {
-        const data = JSON.parse(event.data);
-        
-        if (data.type === 'notification') {
-          addNotification({
-            type: data.notificationType,
-            title: data.title,
-            message: data.message,
-            duration: data.duration,
-            persistent: data.persistent
-          });
-        }
+        // Use the correct WebSocket URL for the environment
+        const wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:3002';
+        ws = new WebSocket(wsUrl);
+
+        ws.onopen = () => {
+          console.log('WebSocket connected successfully');
+          setIsConnected(true);
+          
+          // Send ping to verify connection
+          ws?.send(JSON.stringify({ type: 'ping' }));
+        };
+
+        ws.onmessage = (event) => {
+          try {
+            const data = JSON.parse(event.data);
+            
+            switch (data.type) {
+              case 'connection-established':
+                console.log('Connection established:', data.message);
+                break;
+                
+              case 'real-time-event':
+                if (data.event) {
+                  const { event } = data;
+                  addNotification({
+                    type: event.severity === 'error' || event.severity === 'critical' ? 'error' :
+                          event.severity === 'warning' ? 'warning' : 'info',
+                    title: 'System Event',
+                    message: event.data.message,
+                    duration: 3000
+                  });
+                }
+                break;
+                
+              case 'alert':
+                if (data.alert) {
+                  addNotification({
+                    type: data.alert.severity === 'critical' || data.alert.severity === 'high' ? 'error' : 'warning',
+                    title: 'System Alert',
+                    message: data.alert.message,
+                    persistent: true
+                  });
+                }
+                break;
+                
+              case 'pong':
+                // Keep-alive response
+                break;
+                
+              default:
+                console.log('Unknown WebSocket message type:', data.type);
+            }
+          } catch (error) {
+            console.error('Error parsing WebSocket message:', error);
+          }
+        };
+
+        ws.onclose = (event) => {
+          console.log('WebSocket connection closed:', event.reason);
+          setIsConnected(false);
+          
+          // Reconnect after delay if not intentionally closed
+          if (event.code !== 1000) {
+            reconnectTimeout = setTimeout(connectWebSocket, 5000);
+          }
+        };
+
+        ws.onerror = (error) => {
+          console.error('WebSocket error:', error);
+          setIsConnected(false);
+        };
+
       } catch (error) {
-        console.error('Error parsing notification:', error);
+        console.error('Failed to connect WebSocket:', error);
+        setIsConnected(false);
+        
+        // Retry connection
+        reconnectTimeout = setTimeout(connectWebSocket, 5000);
       }
     };
 
-    ws.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
+    // Initial connection
+    connectWebSocket();
 
+    // Cleanup function
     return () => {
-      ws.close();
+      if (reconnectTimeout) {
+        clearTimeout(reconnectTimeout);
+      }
+      if (ws) {
+        ws.close(1000, 'Component unmounting');
+      }
     };
   }, [addNotification]);
+
+  return { isConnected };
 };
 
-// Notification Bell Component
+// Notification Bell Component with connection status
 export const NotificationBell: React.FC = () => {
   const { notifications, clearAll } = useNotifications();
+  const { isConnected } = useRealTimeNotifications();
   const [showDropdown, setShowDropdown] = useState(false);
 
   const unreadCount = notifications.filter(n => n.persistent).length;
+
+  const getIcon = (notification: Notification) => {
+    switch (notification.type) {
+      case 'success':
+        return <CheckCircle className="w-4 h-4 text-green-600" />;
+      case 'error':
+        return <AlertCircle className="w-4 h-4 text-red-600" />;
+      case 'warning':
+        return <AlertTriangle className="w-4 h-4 text-amber-600" />;
+      case 'info':
+        return <Info className="w-4 h-4 text-blue-600" />;
+    }
+  };
 
   return (
     <div className="relative">
       <button
         onClick={() => setShowDropdown(!showDropdown)}
-        className="relative p-2 text-neutral-600 hover:text-neutral-900 transition-colors duration-200"
+        className={`relative p-2 transition-colors duration-200 ${
+          isConnected 
+            ? 'text-neutral-600 hover:text-neutral-900' 
+            : 'text-red-600 hover:text-red-700'
+        }`}
+        title={isConnected ? 'Real-time notifications active' : 'Real-time notifications disconnected'}
       >
         <Bell className="w-5 h-5" />
         {unreadCount > 0 && (
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
             {unreadCount > 9 ? '9+' : unreadCount}
           </span>
+        )}
+        {!isConnected && (
+          <span className="absolute -bottom-1 -right-1 bg-red-500 w-3 h-3 rounded-full"></span>
         )}
       </button>
 
@@ -235,14 +330,17 @@ export const NotificationBell: React.FC = () => {
           <div className="p-4 border-b border-neutral-200">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold text-neutral-900">Notifikasi</h3>
-              {notifications.length > 0 && (
-                <button
-                  onClick={clearAll}
-                  className="text-sm text-blue-600 hover:text-blue-700"
-                >
-                  Hapus Semua
-                </button>
-              )}
+              <div className="flex items-center space-x-2">
+                <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                {notifications.length > 0 && (
+                  <button
+                    onClick={clearAll}
+                    className="text-sm text-blue-600 hover:text-blue-700"
+                  >
+                    Hapus Semua
+                  </button>
+                )}
+              </div>
             </div>
           </div>
           
@@ -255,7 +353,7 @@ export const NotificationBell: React.FC = () => {
               notifications.map((notification) => (
                 <div key={notification.id} className="p-4 border-b border-neutral-100 hover:bg-neutral-50">
                   <div className="flex items-start space-x-3">
-                    {getIcon()}
+                    {getIcon(notification)}
                     <div className="flex-1">
                       <h4 className="text-sm font-medium text-neutral-900">
                         {notification.title}
@@ -269,6 +367,14 @@ export const NotificationBell: React.FC = () => {
               ))
             )}
           </div>
+          
+          {!isConnected && (
+            <div className="p-3 bg-red-50 border-t border-red-200">
+              <p className="text-sm text-red-700">
+                Real-time notifications disconnected. Attempting to reconnect...
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>
