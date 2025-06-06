@@ -177,7 +177,7 @@ const PropertyListings: React.FC = () => {
                 <div className="absolute top-4 left-4 flex flex-col space-y-2">
                   {property.featured && (
                     <span className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      Featured
+                      Unggulan
                     </span>
                   )}
                   {property.virtual360 && (
@@ -266,7 +266,7 @@ const PropertyListings: React.FC = () => {
         {/* Load More Button */}
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-700 hover:to-amber-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            Load More Properties
+            Muat Lebih Banyak Properti
           </button>
         </div>
       </div>

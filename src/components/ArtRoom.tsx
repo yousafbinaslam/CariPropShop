@@ -157,15 +157,15 @@ const ArtRoom: React.FC = () => {
             <div className="grid grid-cols-3 gap-8 mt-8 pt-8 border-t border-white/10">
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">500+</div>
-                <div className="text-neutral-400 text-sm">Completed Projects</div>
+                <div className="text-neutral-400 text-sm">Proyek Selesai</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">98%</div>
-                <div className="text-neutral-400 text-sm">Client Satisfaction</div>
+                <div className="text-neutral-400 text-sm">Kepuasan Klien</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">15+</div>
-                <div className="text-neutral-400 text-sm">Years Experience</div>
+                <div className="text-neutral-400 text-sm">Tahun Pengalaman</div>
               </div>
             </div>
           </div>

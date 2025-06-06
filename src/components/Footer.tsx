@@ -246,18 +246,18 @@ const Footer: React.FC = () => {
         <div className="py-6 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-neutral-400">
             <div className="mb-4 md:mb-0">
-              <p>&copy; 2025 Cari PropShop Indonesia. All rights reserved.</p>
-              <p className="text-xs mt-1">Licensed Real Estate Management Platform</p>
+              <p>&copy; 2025 Cari PropShop Indonesia By Invologi (MiYu Inovasi Teknologi). Hak cipta dilindungi.</p>
+              <p className="text-xs mt-1">Platform Manajemen Real Estate Berlisensi</p>
             </div>
             <div className="flex space-x-6">
-              <a href="/privacy-policy" className="hover:text-amber-400 transition-colors duration-300">
-                Privacy Policy
+              <a href="/kebijakan-privasi" className="hover:text-amber-400 transition-colors duration-300">
+                Kebijakan Privasi
               </a>
-              <a href="/terms-of-service" className="hover:text-amber-400 transition-colors duration-300">
-                Terms of Service
+              <a href="/syarat-layanan" className="hover:text-amber-400 transition-colors duration-300">
+                Syarat Layanan
               </a>
-              <a href="/legal-compliance" className="hover:text-amber-400 transition-colors duration-300">
-                Legal Compliance
+              <a href="/kepatuhan-hukum" className="hover:text-amber-400 transition-colors duration-300">
+                Kepatuhan Hukum
               </a>
               <a href="/sitemap" className="hover:text-amber-400 transition-colors duration-300">
                 Sitemap

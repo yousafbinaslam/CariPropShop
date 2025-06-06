@@ -40,7 +40,7 @@ const SupabaseStatus: React.FC = () => {
     return (
       <div className="flex items-center space-x-2 px-3 py-2 bg-blue-50 rounded-lg">
         <Database className="w-4 h-4 text-blue-600 animate-pulse" />
-        <span className="text-sm text-blue-700">Connecting to Supabase...</span>
+        <span className="text-sm text-blue-700">Menghubungkan ke Supabase...</span>
       </div>
     );
   }
@@ -50,7 +50,7 @@ const SupabaseStatus: React.FC = () => {
       <div className="flex items-center space-x-2 px-3 py-2 bg-green-50 rounded-lg">
         <CheckCircle className="w-4 h-4 text-green-600" />
         <Wifi className="w-4 h-4 text-green-600" />
-        <span className="text-sm text-green-700">Supabase Connected</span>
+        <span className="text-sm text-green-700">Supabase Terhubung</span>
       </div>
     );
   }
@@ -60,7 +60,7 @@ const SupabaseStatus: React.FC = () => {
       <div className="flex items-center space-x-2 px-3 py-2 bg-red-50 rounded-lg">
         <AlertCircle className="w-4 h-4 text-red-600" />
         <WifiOff className="w-4 h-4 text-red-600" />
-        <span className="text-sm text-red-700">Supabase Connection Failed</span>
+        <span className="text-sm text-red-700">Koneksi Supabase Gagal</span>
       </div>
       {error && (
         <div className="px-3 py-2 bg-red-50 rounded-lg">
@@ -71,7 +71,7 @@ const SupabaseStatus: React.FC = () => {
         onClick={checkConnection}
         className="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 transition-colors"
       >
-        Retry Connection
+        Coba Lagi Koneksi
       </button>
     </div>
   );

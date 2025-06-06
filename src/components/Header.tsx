@@ -29,7 +29,7 @@ const Header: React.FC = () => {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Cari PropShop
             </h1>
-            <p className="text-xs text-neutral-600 font-medium">Property Management</p>
+            <p className="text-xs text-neutral-600 font-medium">Manajemen Properti</p>
           </div>
 
           {/* Desktop Navigation */}

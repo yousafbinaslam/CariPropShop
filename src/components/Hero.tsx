@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-white/90 text-sm font-medium">Premium Real Estate & Interior Design</span>
+            <span className="text-white/90 text-sm font-medium">Platform Manajemen Properti Premium</span>
           </div>
 
           {/* Main Title */}

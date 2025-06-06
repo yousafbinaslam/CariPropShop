@@ -96,7 +96,7 @@ const InteriorDesign: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-amber-50 rounded-full mb-6">
             <Palette className="w-4 h-4 text-amber-600" />
-            <span className="text-amber-700 text-sm font-medium">600+ Design Projects</span>
+            <span className="text-amber-700 text-sm font-medium">600+ Proyek Desain</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
@@ -130,7 +130,7 @@ const InteriorDesign: React.FC = () => {
                         <div className="max-w-2xl">
                           {style.featured && (
                             <span className="inline-block bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                              Featured Style
+                              Gaya Unggulan
                             </span>
                           )}
                           <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -142,7 +142,7 @@ const InteriorDesign: React.FC = () => {
                           <div className="flex items-center space-x-6">
                             <div className="flex items-center space-x-2 text-white/80">
                               <Home className="w-4 h-4" />
-                              <span className="text-sm">{style.projectCount} Projects</span>
+                              <span className="text-sm">{style.projectCount} Proyek</span>
                             </div>
                             <button className="flex items-center space-x-2 bg-white text-neutral-900 px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 hover:text-white transition-all duration-300">
                               <span>{t('interior.view.portfolio')}</span>
@@ -189,9 +189,9 @@ const InteriorDesign: React.FC = () => {
         {/* Featured Projects Grid */}
         <div>
           <div className="flex items-center justify-between mb-12">
-            <h3 className="text-3xl font-bold text-neutral-900">Featured Projects</h3>
+            <h3 className="text-3xl font-bold text-neutral-900">Proyek Unggulan</h3>
             <button className="flex items-center space-x-2 text-amber-600 hover:text-amber-700 font-semibold transition-colors duration-300">
-              <span>View All Projects</span>
+              <span>Lihat Semua Proyek</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

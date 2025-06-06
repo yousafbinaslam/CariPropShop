@@ -43,138 +43,138 @@ const AdminDashboard: React.FC = () => {
   const menuItems = [
     { 
       id: 'overview', 
-      label: 'Dashboard Overview', 
+      label: 'Ringkasan Dashboard', 
       icon: <BarChart3 className="w-5 h-5" />,
       category: 'main'
     },
     { 
       id: 'properties', 
-      label: 'Property Management', 
+      label: 'Manajemen Properti', 
       icon: <Building className="w-5 h-5" />,
       category: 'operations'
     },
     { 
       id: 'clients', 
-      label: 'CRM - Client Management', 
+      label: 'CRM - Manajemen Klien', 
       icon: <Users className="w-5 h-5" />,
       category: 'operations'
     },
     { 
       id: 'appointments', 
-      label: 'Appointment System', 
+      label: 'Sistem Janji Temu', 
       icon: <Calendar className="w-5 h-5" />,
       category: 'operations'
     },
     { 
       id: 'payments', 
-      label: 'Payment Processing', 
+      label: 'Pemrosesan Pembayaran', 
       icon: <CreditCard className="w-5 h-5" />,
       category: 'finance'
     },
     { 
       id: 'analytics', 
-      label: 'Business Analytics', 
+      label: 'Analitik Bisnis', 
       icon: <TrendingUp className="w-5 h-5" />,
       category: 'analytics'
     },
     { 
       id: 'legal', 
-      label: 'Legal Compliance', 
+      label: 'Kepatuhan Hukum', 
       icon: <Shield className="w-5 h-5" />,
       category: 'compliance'
     },
     { 
       id: 'documents', 
-      label: 'Document Management', 
+      label: 'Manajemen Dokumen', 
       icon: <FileText className="w-5 h-5" />,
       category: 'compliance'
     },
     { 
       id: 'quality', 
-      label: 'Quality Assurance', 
+      label: 'Jaminan Kualitas', 
       icon: <CheckCircle2 className="w-5 h-5" />,
       category: 'system'
     },
     { 
       id: 'database', 
-      label: 'Database Management', 
+      label: 'Manajemen Database', 
       icon: <Database className="w-5 h-5" />,
       category: 'system'
     },
     { 
       id: 'help', 
-      label: 'Help & Documentation', 
+      label: 'Bantuan & Dokumentasi', 
       icon: <HelpCircle className="w-5 h-5" />,
       category: 'support'
     },
     { 
       id: 'communication', 
-      label: 'Communication Hub', 
+      label: 'Pusat Komunikasi', 
       icon: <MessageSquare className="w-5 h-5" />,
       category: 'support'
     },
     { 
       id: 'settings', 
-      label: 'System Settings', 
+      label: 'Pengaturan Sistem', 
       icon: <Settings className="w-5 h-5" />,
       category: 'system'
     },
     { 
       id: 'monitor', 
-      label: 'System Monitor', 
+      label: 'Monitor Sistem', 
       icon: <Activity className="w-5 h-5" />,
       category: 'system'
     },
   ];
 
   const categories = {
-    main: 'Main Dashboard',
-    operations: 'Operations',
-    finance: 'Finance',
-    analytics: 'Analytics',
-    compliance: 'Legal & Compliance',
-    system: 'System Management',
-    support: 'Support & Help'
+    main: 'Dashboard Utama',
+    operations: 'Operasional',
+    finance: 'Keuangan',
+    analytics: 'Analitik',
+    compliance: 'Hukum & Kepatuhan',
+    system: 'Manajemen Sistem',
+    support: 'Dukungan & Bantuan'
   };
 
   const stats = [
-    { label: 'Total Properties', value: '247', change: '+12%', color: 'blue', status: 'healthy' },
-    { label: 'Active Clients', value: '1,834', change: '+8%', color: 'green', status: 'healthy' },
-    { label: 'Pending Appointments', value: '23', change: '+5%', color: 'orange', status: 'attention' },
-    { label: 'Monthly Revenue', value: 'IDR 2.4B', change: '+15%', color: 'purple', status: 'healthy' },
-    { label: 'Legal Compliance', value: '98%', change: '+2%', color: 'green', status: 'healthy' },
-    { label: 'System Health', value: '99.9%', change: '0%', color: 'blue', status: 'healthy' },
+    { label: 'Total Properti', value: '247', change: '+12%', color: 'blue', status: 'healthy' },
+    { label: 'Klien Aktif', value: '1,834', change: '+8%', color: 'green', status: 'healthy' },
+    { label: 'Janji Temu Tertunda', value: '23', change: '+5%', color: 'orange', status: 'attention' },
+    { label: 'Pendapatan Bulanan', value: 'IDR 2.4M', change: '+15%', color: 'purple', status: 'healthy' },
+    { label: 'Kepatuhan Hukum', value: '98%', change: '+2%', color: 'green', status: 'healthy' },
+    { label: 'Kesehatan Sistem', value: '99.9%', change: '0%', color: 'blue', status: 'healthy' },
   ];
 
   const recentActivities = [
     { 
       type: 'property', 
-      message: 'New property listed in Kemang with legal verification', 
-      time: '2 hours ago',
+      message: 'Properti baru terdaftar di Kemang dengan verifikasi hukum', 
+      time: '2 jam yang lalu',
       status: 'success'
     },
     { 
       type: 'appointment', 
-      message: 'Appointment scheduled with John Doe - Notaris required', 
-      time: '4 hours ago',
+      message: 'Janji temu dijadwalkan dengan John Doe - Notaris diperlukan', 
+      time: '4 jam yang lalu',
       status: 'pending'
     },
     { 
       type: 'payment', 
-      message: 'Payment received for Villa Bali project - IDR 500M', 
-      time: '6 hours ago',
+      message: 'Pembayaran diterima untuk proyek Villa Bali - IDR 500M', 
+      time: '6 jam yang lalu',
       status: 'success'
     },
     { 
       type: 'legal', 
-      message: 'Legal document template updated for commercial properties', 
-      time: '8 hours ago',
+      message: 'Template dokumen hukum diperbarui untuk properti komersial', 
+      time: '8 jam yang lalu',
       status: 'info'
     },
     { 
       type: 'system', 
-      message: 'Database backup completed successfully', 
-      time: '12 hours ago',
+      message: 'Backup database berhasil diselesaikan', 
+      time: '12 jam yang lalu',
       status: 'success'
     },
   ];
@@ -182,20 +182,20 @@ const AdminDashboard: React.FC = () => {
   const systemAlerts = [
     { 
       type: 'warning', 
-      message: '3 properties require legal document updates', 
-      action: 'Review Documents',
+      message: '3 properti memerlukan pembaruan dokumen hukum', 
+      action: 'Tinjau Dokumen',
       priority: 'medium'
     },
     { 
       type: 'info', 
-      message: 'Monthly compliance report ready for review', 
-      action: 'View Report',
+      message: 'Laporan kepatuhan bulanan siap untuk ditinjau', 
+      action: 'Lihat Laporan',
       priority: 'low'
     },
     { 
       type: 'success', 
-      message: 'All payment gateways operational', 
-      action: 'View Status',
+      message: 'Semua gateway pembayaran beroperasi', 
+      action: 'Lihat Status',
       priority: 'low'
     },
   ];
@@ -231,14 +231,14 @@ const AdminDashboard: React.FC = () => {
             <nav className="flex items-center space-x-2 text-sm text-neutral-600">
               <span>Dashboard</span>
               <span>/</span>
-              <span className="text-neutral-900 font-medium">Overview</span>
+              <span className="text-neutral-900 font-medium">Ringkasan</span>
             </nav>
 
             {/* System Alerts */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
               <h3 className="text-lg font-semibold text-neutral-900 mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 text-amber-500 mr-2" />
-                System Alerts & Notifications
+                Peringatan & Notifikasi Sistem
               </h3>
               <div className="space-y-3">
                 {systemAlerts.map((alert, index) => (
@@ -289,42 +289,42 @@ const AdminDashboard: React.FC = () => {
 
             {/* Quick Actions */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Quick Actions</h3>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Aksi Cepat</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <button 
                   onClick={() => setActiveTab('properties')}
                   className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200"
                 >
                   <Plus className="w-5 h-5 text-blue-600" />
-                  <span className="font-medium text-blue-700">Add Property</span>
+                  <span className="font-medium text-blue-700">Tambah Properti</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('legal')}
                   className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors duration-200"
                 >
                   <Shield className="w-5 h-5 text-green-600" />
-                  <span className="font-medium text-green-700">Legal Check</span>
+                  <span className="font-medium text-green-700">Cek Hukum</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('clients')}
                   className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors duration-200"
                 >
                   <Users className="w-5 h-5 text-purple-600" />
-                  <span className="font-medium text-purple-700">Manage Clients</span>
+                  <span className="font-medium text-purple-700">Kelola Klien</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('quality')}
                   className="flex items-center space-x-3 p-4 bg-amber-50 rounded-lg hover:bg-amber-100 transition-colors duration-200"
                 >
                   <CheckCircle2 className="w-5 h-5 text-amber-600" />
-                  <span className="font-medium text-amber-700">Quality Check</span>
+                  <span className="font-medium text-amber-700">Cek Kualitas</span>
                 </button>
               </div>
             </div>
 
             {/* Recent Activities */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Recent System Activities</h3>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Aktivitas Sistem Terbaru</h3>
               <div className="space-y-4">
                 {recentActivities.map((activity, index) => (
                   <div key={index} className="flex items-center space-x-4 p-3 bg-neutral-50 rounded-lg">
@@ -352,45 +352,45 @@ const AdminDashboard: React.FC = () => {
             {/* Integration Status */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
-                <h3 className="text-lg font-semibold text-neutral-900 mb-4">WhatsApp Integration</h3>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Integrasi WhatsApp</h3>
                 <div className="space-y-4">
                   <div className="p-4 bg-green-50 rounded-lg">
                     <div className="flex items-center space-x-3 mb-2">
                       <Phone className="w-5 h-5 text-green-600" />
-                      <span className="font-medium text-green-700">Business WhatsApp</span>
+                      <span className="font-medium text-green-700">WhatsApp Bisnis</span>
                     </div>
                     <p className="text-sm text-green-600">+62 822 3354 1409</p>
-                    <p className="text-xs text-green-500 mt-1">Active - 24/7 Support</p>
+                    <p className="text-xs text-green-500 mt-1">Aktif - Dukungan 24/7</p>
                   </div>
                   <div className="p-4 bg-blue-50 rounded-lg">
                     <div className="flex items-center space-x-3 mb-2">
                       <MessageSquare className="w-5 h-5 text-blue-600" />
-                      <span className="font-medium text-blue-700">Personal WhatsApp</span>
+                      <span className="font-medium text-blue-700">WhatsApp Personal</span>
                     </div>
                     <p className="text-sm text-blue-600">+62 822 3354 1409</p>
-                    <p className="text-xs text-blue-500 mt-1">Active - Direct Contact</p>
+                    <p className="text-xs text-blue-500 mt-1">Aktif - Kontak Langsung</p>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
-                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Legal Compliance Status</h3>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Status Kepatuhan Hukum</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-700">Notaris Integration</span>
-                    <span className="text-green-600 font-medium">Active</span>
+                    <span className="text-sm text-neutral-700">Integrasi Notaris</span>
+                    <span className="text-green-600 font-medium">Aktif</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-700">Document Templates</span>
-                    <span className="text-green-600 font-medium">Updated</span>
+                    <span className="text-sm text-neutral-700">Template Dokumen</span>
+                    <span className="text-green-600 font-medium">Diperbarui</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-700">Digital Signatures</span>
-                    <span className="text-green-600 font-medium">Enabled</span>
+                    <span className="text-sm text-neutral-700">Tanda Tangan Digital</span>
+                    <span className="text-green-600 font-medium">Diaktifkan</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-700">Compliance Check</span>
-                    <span className="text-amber-600 font-medium">Pending</span>
+                    <span className="text-sm text-neutral-700">Cek Kepatuhan</span>
+                    <span className="text-amber-600 font-medium">Tertunda</span>
                   </div>
                 </div>
               </div>
@@ -415,7 +415,7 @@ const AdminDashboard: React.FC = () => {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">Cari PropShop ERP/CRM</h1>
-            <p className="text-sm text-neutral-600">Comprehensive Real Estate Management System</p>
+            <p className="text-sm text-neutral-600">Sistem Manajemen Real Estate Komprehensif</p>
           </div>
           <div className="flex items-center space-x-4">
             <button 

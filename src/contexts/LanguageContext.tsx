@@ -22,11 +22,10 @@ const translations = {
     'nav.contact': 'Kontak',
     
     // Hero Section
-    'hero.title': 'EstateElegance Indonesia',
-    'hero.subtitle': 'Platform Eksklusif untuk Properti Mewah & Desain Interior',
-    'hero.description': 'Temukan properti impian Anda dan wujudkan ruang hidup yang elegan dengan layanan desain interior terdepan di Indonesia.',
+    'hero.subtitle': 'Platform Manajemen Properti Terpadu Indonesia',
+    'hero.description': 'Kelola properti, klien, dan transaksi dengan sistem ERP/CRM terlengkap untuk profesional real estate di Indonesia.',
     'hero.cta.explore': 'Jelajahi Properti',
-    'hero.cta.design': 'Mulai Desain',
+    'hero.cta.design': 'Akses Admin',
     
     // Property Section
     'properties.title': 'Properti Eksklusif',
@@ -49,7 +48,7 @@ const translations = {
     'interior.view.portfolio': 'Lihat Portofolio',
     
     // Art Room
-    'artroom.title': 'Art Room - Studio Desain Interaktif',
+    'artroom.title': 'Ruang Seni - Studio Desain Interaktif',
     'artroom.subtitle': 'Rencanakan dan visualisasikan desain interior Anda dengan teknologi canggih',
     'artroom.features.planner': 'Perencana Ruang Virtual',
     'artroom.features.configurator': 'Konfigurator Furnitur',

@@ -20,81 +20,81 @@ import {
 const Sitemap: React.FC = () => {
   const siteStructure = [
     {
-      category: 'Main Pages',
+      category: 'Halaman Utama',
       icon: <Home className="w-5 h-5" />,
       pages: [
-        { name: 'Homepage', url: '/', description: 'Main landing page with property showcase' },
-        { name: 'Property Listings', url: '/properties', description: 'Browse all available properties' },
-        { name: 'Interior Design', url: '/interior', description: 'Interior design portfolio and services' },
-        { name: 'Art Room', url: '/artroom', description: 'Interactive design studio' },
-        { name: 'About Us', url: '/about', description: 'Company information and team' },
-        { name: 'Contact', url: '/contact', description: 'Contact information and inquiry form' }
+        { name: 'Beranda', url: '/', description: 'Halaman utama dengan showcase properti' },
+        { name: 'Daftar Properti', url: '/properties', description: 'Jelajahi semua properti yang tersedia' },
+        { name: 'Desain Interior', url: '/interior', description: 'Portofolio dan layanan desain interior' },
+        { name: 'Ruang Seni', url: '/artroom', description: 'Studio desain interaktif' },
+        { name: 'Tentang Kami', url: '/about', description: 'Informasi perusahaan dan tim' },
+        { name: 'Kontak', url: '/contact', description: 'Informasi kontak dan formulir pertanyaan' }
       ]
     },
     {
-      category: 'Admin Dashboard',
+      category: 'Dashboard Admin',
       icon: <Settings className="w-5 h-5" />,
       pages: [
-        { name: 'Dashboard Overview', url: '/admin', description: 'Main admin dashboard with statistics' },
-        { name: 'Property Management', url: '/admin/properties', description: 'Add and manage property listings' },
-        { name: 'Client Management', url: '/admin/clients', description: 'CRM system for client relationships' },
-        { name: 'Appointment Scheduler', url: '/admin/appointments', description: 'Schedule and manage appointments' },
-        { name: 'Payment Dashboard', url: '/admin/payments', description: 'Payment processing and tracking' },
-        { name: 'Analytics', url: '/admin/analytics', description: 'Business analytics and reporting' }
+        { name: 'Ringkasan Dashboard', url: '/admin', description: 'Dashboard admin utama dengan statistik' },
+        { name: 'Manajemen Properti', url: '/admin/properties', description: 'Tambah dan kelola daftar properti' },
+        { name: 'Manajemen Klien', url: '/admin/clients', description: 'Sistem CRM untuk hubungan klien' },
+        { name: 'Penjadwal Janji Temu', url: '/admin/appointments', description: 'Jadwalkan dan kelola janji temu' },
+        { name: 'Dashboard Pembayaran', url: '/admin/payments', description: 'Pemrosesan dan pelacakan pembayaran' },
+        { name: 'Analitik', url: '/admin/analytics', description: 'Analitik bisnis dan pelaporan' }
       ]
     },
     {
-      category: 'Legal & Compliance',
+      category: 'Hukum & Kepatuhan',
       icon: <Shield className="w-5 h-5" />,
       pages: [
-        { name: 'Legal Compliance', url: '/admin/legal', description: 'Indonesian real estate legal compliance' },
-        { name: 'Document Management', url: '/admin/documents', description: 'Legal document storage and management' },
-        { name: 'Notaris Network', url: '/admin/notaris', description: 'Verified notaris professionals' },
-        { name: 'Privacy Policy', url: '/privacy-policy', description: 'Data protection and privacy policy' },
-        { name: 'Terms of Service', url: '/terms-of-service', description: 'Platform terms and conditions' },
-        { name: 'User Agreement', url: '/user-agreement', description: 'User rights and responsibilities' }
+        { name: 'Kepatuhan Hukum', url: '/admin/legal', description: 'Kepatuhan hukum real estate Indonesia' },
+        { name: 'Manajemen Dokumen', url: '/admin/documents', description: 'Penyimpanan dan manajemen dokumen hukum' },
+        { name: 'Jaringan Notaris', url: '/admin/notaris', description: 'Profesional notaris terverifikasi' },
+        { name: 'Kebijakan Privasi', url: '/privacy-policy', description: 'Perlindungan data dan kebijakan privasi' },
+        { name: 'Syarat Layanan', url: '/terms-of-service', description: 'Syarat dan ketentuan platform' },
+        { name: 'Perjanjian Pengguna', url: '/user-agreement', description: 'Hak dan tanggung jawab pengguna' }
       ]
     },
     {
-      category: 'System Management',
+      category: 'Manajemen Sistem',
       icon: <Database className="w-5 h-5" />,
       pages: [
-        { name: 'Quality Assurance', url: '/admin/quality', description: 'System testing and quality monitoring' },
-        { name: 'Database Management', url: '/admin/database', description: 'Database operations and maintenance' },
-        { name: 'Backup Management', url: '/admin/backups', description: 'Data backup and recovery' },
-        { name: 'System Settings', url: '/admin/settings', description: 'Platform configuration and settings' }
+        { name: 'Jaminan Kualitas', url: '/admin/quality', description: 'Pengujian sistem dan pemantauan kualitas' },
+        { name: 'Manajemen Database', url: '/admin/database', description: 'Operasi dan pemeliharaan database' },
+        { name: 'Manajemen Backup', url: '/admin/backups', description: 'Backup dan pemulihan data' },
+        { name: 'Pengaturan Sistem', url: '/admin/settings', description: 'Konfigurasi dan pengaturan platform' }
       ]
     },
     {
-      category: 'Support & Help',
+      category: 'Dukungan & Bantuan',
       icon: <HelpCircle className="w-5 h-5" />,
       pages: [
-        { name: 'Help Documentation', url: '/admin/help', description: 'Comprehensive user guides and tutorials' },
-        { name: 'Video Tutorials', url: '/help/videos', description: 'Step-by-step video guides' },
-        { name: 'FAQ', url: '/help/faq', description: 'Frequently asked questions' },
-        { name: 'AI Assistant', url: '/help/ai', description: 'Jenny AI assistant for instant help' },
-        { name: 'Support Center', url: '/support', description: '24/7 customer support' }
+        { name: 'Dokumentasi Bantuan', url: '/admin/help', description: 'Panduan pengguna dan tutorial komprehensif' },
+        { name: 'Tutorial Video', url: '/help/videos', description: 'Panduan video langkah demi langkah' },
+        { name: 'FAQ', url: '/help/faq', description: 'Pertanyaan yang sering diajukan' },
+        { name: 'Asisten AI', url: '/help/ai', description: 'Asisten AI Jenny untuk bantuan instan' },
+        { name: 'Pusat Dukungan', url: '/support', description: 'Dukungan pelanggan 24/7' }
       ]
     },
     {
-      category: 'Communication',
+      category: 'Komunikasi',
       icon: <MessageSquare className="w-5 h-5" />,
       pages: [
-        { name: 'WhatsApp Business', url: 'https://wa.me/6282233541409', description: 'Direct WhatsApp communication' },
-        { name: 'Communication Hub', url: '/admin/communication', description: 'Centralized communication management' },
-        { name: 'Client Portal', url: '/client-portal', description: 'Client access portal' },
-        { name: 'Appointment Booking', url: '/book-appointment', description: 'Online appointment booking' }
+        { name: 'WhatsApp Bisnis', url: 'https://wa.me/6282233541409', description: 'Komunikasi WhatsApp langsung' },
+        { name: 'Pusat Komunikasi', url: '/admin/communication', description: 'Manajemen komunikasi terpusat' },
+        { name: 'Portal Klien', url: '/client-portal', description: 'Portal akses klien' },
+        { name: 'Pemesanan Janji Temu', url: '/book-appointment', description: 'Pemesanan janji temu online' }
       ]
     }
   ];
 
   const quickLinks = [
-    { name: 'Add New Property', url: '/admin/properties/new', icon: <Building className="w-4 h-4" /> },
-    { name: 'Client Dashboard', url: '/admin/clients', icon: <Users className="w-4 h-4" /> },
-    { name: 'Schedule Appointment', url: '/admin/appointments/new', icon: <Calendar className="w-4 h-4" /> },
-    { name: 'Payment Processing', url: '/admin/payments', icon: <CreditCard className="w-4 h-4" /> },
-    { name: 'Legal Documents', url: '/admin/legal', icon: <FileText className="w-4 h-4" /> },
-    { name: 'System Analytics', url: '/admin/analytics', icon: <BarChart3 className="w-4 h-4" /> }
+    { name: 'Tambah Properti Baru', url: '/admin/properties/new', icon: <Building className="w-4 h-4" /> },
+    { name: 'Dashboard Klien', url: '/admin/clients', icon: <Users className="w-4 h-4" /> },
+    { name: 'Jadwalkan Janji Temu', url: '/admin/appointments/new', icon: <Calendar className="w-4 h-4" /> },
+    { name: 'Pemrosesan Pembayaran', url: '/admin/payments', icon: <CreditCard className="w-4 h-4" /> },
+    { name: 'Dokumen Hukum', url: '/admin/legal', icon: <FileText className="w-4 h-4" /> },
+    { name: 'Analitik Sistem', url: '/admin/analytics', icon: <BarChart3 className="w-4 h-4" /> }
   ];
 
   return (
@@ -104,14 +104,14 @@ const Sitemap: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 rounded-full mb-6">
             <Globe className="w-4 h-4 text-blue-600" />
-            <span className="text-blue-700 text-sm font-medium">Complete Site Navigation</span>
+            <span className="text-blue-700 text-sm font-medium">Navigasi Situs Lengkap</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Cari PropShop Sitemap
           </h1>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            Comprehensive navigation guide for all platform features and pages
+            Panduan navigasi komprehensif untuk semua fitur dan halaman platform
           </p>
         </div>
 
@@ -121,7 +121,7 @@ const Sitemap: React.FC = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400" />
             <input
               type="text"
-              placeholder="Search pages..."
+              placeholder="Cari halaman..."
               className="w-full pl-10 pr-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -129,7 +129,7 @@ const Sitemap: React.FC = () => {
 
         {/* Quick Links */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Quick Access</h2>
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Akses Cepat</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {quickLinks.map((link, index) => (
               <a
@@ -196,9 +196,9 @@ const Sitemap: React.FC = () => {
         {/* Footer Info */}
         <div className="mt-12 text-center">
           <div className="bg-white p-8 rounded-xl shadow-sm border border-neutral-200">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Need Help Navigating?</h3>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Butuh Bantuan Navigasi?</h3>
             <p className="text-neutral-600 mb-6">
-              Our AI assistant Jenny is available 24/7 to help you find what you're looking for.
+              Asisten AI kami Jenny tersedia 24/7 untuk membantu Anda menemukan apa yang Anda cari.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a
@@ -206,11 +206,11 @@ const Sitemap: React.FC = () => {
                 className="flex items-center space-x-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>Contact Support</span>
+                <span>Hubungi Dukungan</span>
               </a>
               <button className="flex items-center space-x-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
                 <HelpCircle className="w-4 h-4" />
-                <span>Ask Jenny AI</span>
+                <span>Tanya Jenny AI</span>
               </button>
             </div>
           </div>
